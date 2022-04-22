@@ -46,15 +46,4 @@ export class CoursesComponent implements OnInit {
     );
   }
 
-  create(course: Course) {
-    this.coursesService.create(course).subscribe(
-      (course) => {
-        this.courses$ = this.coursesService.list();
-      },
-      (error) => {
-        this.onError('Erro ao criar curso.');
-      }
-    );
-  }
-  
 }
