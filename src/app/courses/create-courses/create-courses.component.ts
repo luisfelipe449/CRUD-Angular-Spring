@@ -24,6 +24,7 @@ export class CreateCoursesComponent implements OnInit {
         console.log(response);
       },
     );
+    this.router.navigate(['']);
   }
 
   cancel(): void{

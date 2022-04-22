@@ -1,14 +1,24 @@
-<form>
+<form class="container-fluid">
   <h1>Criando nova matéria</h1>
 
   <div class="forms">
     <mat-form-field class="form" appearance="fill">
-      <mat-label>Titulo</mat-label>
-      <input [(ngModel)]="courses.name" name="courses.name" matInput placeholder="Nome" />
+      <mat-label>Nome</mat-label>
+      <input
+        [(ngModel)]="courses.name"
+        name="courses.name"
+        matInput
+        placeholder="Nome"
+      />
     </mat-form-field>
     <mat-form-field class="form" appearance="fill">
-      <mat-label>Descricao</mat-label>
-      <input [(ngModel)]="courses.category" name="courses.category" matInput placeholder="Categoria" />
+      <mat-label>Categoria</mat-label>
+      <input
+        [(ngModel)]="courses.category"
+        name="courses.category"
+        matInput
+        placeholder="Categoria"
+      />
     </mat-form-field>
   </div>
 
