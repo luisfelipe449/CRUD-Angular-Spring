@@ -14,7 +14,7 @@ export class CoursesComponent implements OnInit {
   ngOnInit(): void {}
 
   courses$: Observable<Course[]>;
-  displayedColumns = ['name', 'category', 'total', 'estoque', 'buttons'];
+  displayedColumns = ['name', 'estoque', 'category', 'total', 'buttons'];
 
   constructor(
     private coursesService: CoursesService,

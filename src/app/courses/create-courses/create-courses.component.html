@@ -1,9 +1,11 @@
 <form class="container-fluid">
-  <h1>Criar novo curso</h1>
+  <mat-toolbar class="title">
+      <h1>Adicionar novo produto</h1>
+  </mat-toolbar>
 
   <div class="forms">
     <mat-form-field class="form" appearance="fill">
-      <mat-label>Nome</mat-label>
+      <mat-label>Produto</mat-label>
       <input
         [(ngModel)]="courses.name"
         name="courses.name"
@@ -12,7 +14,7 @@
       />
     </mat-form-field>
     <mat-form-field class="form" appearance="fill">
-      <mat-label>Categoria</mat-label>
+      <mat-label>Valor unitário</mat-label>
       <input
         [(ngModel)]="courses.category"
         name="courses.category"

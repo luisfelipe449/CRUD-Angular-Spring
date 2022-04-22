@@ -1,9 +1,6 @@
 <mat-card class="container-fluid">
   <mat-toolbar color="primary">
-    Produtos disponíveis
-    <button routerLink="create" mat-mini-fab color="warn">
-      <mat-icon>add</mat-icon>
-    </button>
+    <h1>Produtos disponíveis</h1>
   </mat-toolbar>
   <div class="table" *ngIf="courses$ | async as courses; else loading">
     <table mat-table [dataSource]="courses" async class="mat-elevation-z8">
@@ -24,7 +21,7 @@
       <ng-container matColumnDef="total">
         <th mat-header-cell *matHeaderCellDef>Valor Total</th>
         <td mat-cell *matCellDef="let element">
-          {{ element.total }}
+          {{ (element.name)*(element.category) }}
         </td>
       </ng-container>
 
@@ -56,4 +53,10 @@
       <mat-spinner></mat-spinner>
     </div>
   </ng-template>
+  <mat-toolbar color="primary">
+    <h1>Adicionar produto</h1>
+    <button routerLink="create" mat-mini-fab color="warn">
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-toolbar>
 </mat-card>
