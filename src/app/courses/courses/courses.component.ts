@@ -14,8 +14,7 @@ export class CoursesComponent implements OnInit {
   ngOnInit(): void {}
 
   courses$: Observable<Course[]>;
-  displayedColumns = ['_id', 'name', 'category', 'buttons'];
- 
+  displayedColumns = ['name', 'category', 'total', 'estoque', 'buttons'];
 
   constructor(
     private coursesService: CoursesService,
@@ -45,5 +44,4 @@ export class CoursesComponent implements OnInit {
       }
     );
   }
-
 }

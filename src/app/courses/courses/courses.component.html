@@ -1,27 +1,37 @@
-<mat-card>
-  <mat-toolbar color="primary"> Cursos disponíveis </mat-toolbar>
-  <div *ngIf="courses$ | async as courses; else loading">
+<mat-card class="container-fluid">
+  <mat-toolbar color="primary">
+    Produtos disponíveis
+    <button routerLink="create" mat-mini-fab color="warn">
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div class="table" *ngIf="courses$ | async as courses; else loading">
     <table mat-table [dataSource]="courses" async class="mat-elevation-z8">
-      <ng-container matColumnDef="_id">
-        <th mat-header-cell *matHeaderCellDef>ID</th>
-        <td mat-cell *matCellDef="let element">
-          {{ element._id }}
-        </td>
-      </ng-container>
       <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef>Curso</th>
+        <th mat-header-cell *matHeaderCellDef>Produto</th>
         <td mat-cell *matCellDef="let element">
           {{ element.name }}
         </td>
       </ng-container>
 
       <ng-container matColumnDef="category">
-        <th mat-header-cell *matHeaderCellDef>Categoria</th>
+        <th mat-header-cell *matHeaderCellDef>Valor Unitário</th>
         <td mat-cell *matCellDef="let element">
-          {{ element.category
-          }}<mat-icon aria-hidden="false" aria-label="Categoria">{{
-            element.category | category
-          }}</mat-icon>
+          {{ element.category }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef>Valor Total</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.total }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="estoque">
+        <th mat-header-cell *matHeaderCellDef>Estoque</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.total }}
         </td>
       </ng-container>
 
@@ -30,6 +40,9 @@
         <td mat-cell *matCellDef="let element">
           <button (click)="delete(element._id)" mat-mini-fab color="warn">
             <mat-icon>delete</mat-icon>
+          </button>
+          <button mat-mini-fab color="accent">
+            <mat-icon>edit</mat-icon>
           </button>
         </td>
       </ng-container>
@@ -44,6 +57,3 @@
     </div>
   </ng-template>
 </mat-card>
-<button routerLink="create" mat-mini-fab color="warn">
-  <mat-icon>edit</mat-icon>
-</button>

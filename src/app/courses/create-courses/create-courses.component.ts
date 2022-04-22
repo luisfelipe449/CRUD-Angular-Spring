@@ -19,11 +19,7 @@ export class CreateCoursesComponent implements OnInit {
   ngOnInit(): void {}
   
   create(): void{
-    this.coursesService.create(this.courses).subscribe(
-      (response) => {
-        console.log(response);
-      },
-    );
+    this.coursesService.create(this.courses).subscribe();
     this.router.navigate(['']);
   }
 
