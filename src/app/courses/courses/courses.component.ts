@@ -11,7 +11,9 @@ import { CoursesService } from '../services/courses.service';
   styleUrls: ['./courses.component.scss'],
 })
 export class CoursesComponent implements OnInit {
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    /* TODO document why this method 'ngOnInit' is empty */
+  }
 
   courses$: Observable<Course[]>;
   displayedColumns = ['name', 'estoque', 'category', 'total', 'buttons'];
@@ -21,7 +23,7 @@ export class CoursesComponent implements OnInit {
     public dialog: MatDialog
   ) {
     this.courses$ = this.coursesService.list().pipe(
-      catchError((error) => {
+      catchError(() => {
         this.onError('Erro ao carregar cursos.');
         return of([]);
       })
@@ -39,7 +41,7 @@ export class CoursesComponent implements OnInit {
       () => {
         this.courses$ = this.coursesService.list();
       },
-      (error) => {
+      () => {
         this.onError('Erro ao deletar curso.');
       }
     );
