@@ -2,25 +2,38 @@
   <mat-toolbar color="primary"> Cursos disponíveis </mat-toolbar>
   <div *ngIf="courses$ | async as courses; else loading">
     <table mat-table [dataSource]="courses" async class="mat-elevation-z8">
-      <!--- Note that these columns can be defined in any order.
-            The actual rendered columns are set as a property on the row definition" -->
-      <!-- Position Column -->
+      <ng-container matColumnDef="_id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let element of courses">
+          {{ element._id }}
+        </td>
+      </ng-container>
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef>Curso</th>
-        <td mat-cell *matCellDef="let element">
+        <td mat-cell *matCellDef="let element of courses">
           {{ element.name }}
         </td>
       </ng-container>
-      <!-- Name Column -->
+
       <ng-container matColumnDef="category">
         <th mat-header-cell *matHeaderCellDef>Categoria</th>
-        <td mat-cell *matCellDef="let element">
+        <td mat-cell *matCellDef="let element of courses">
           {{ element.category
-          }}<mat-icon aria-hidden="false" aria-label="Categoria"
-            >{{element.category | category }}</mat-icon
-          >
+          }}<mat-icon aria-hidden="false" aria-label="Categoria">{{
+            element.category | category
+          }}</mat-icon>
         </td>
       </ng-container>
+
+      <ng-container matColumnDef="buttons">
+        <th mat-header-cell *matHeaderCellDef>Ações</th>
+        <td mat-cell *matCellDef="let element of courses">
+          <button (click)="delete(element._id)" mat-mini-fab color="warn">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
@@ -31,3 +44,6 @@
     </div>
   </ng-template>
 </mat-card>
+<button routerLink="create" mat-mini-fab color="warn">
+  <mat-icon>edit</mat-icon>
+</button>

@@ -14,7 +14,8 @@ export class CoursesComponent implements OnInit {
   ngOnInit(): void {}
 
   courses$: Observable<Course[]>;
-  displayedColumns = ['name', 'category'];
+  displayedColumns = ['_id', 'name', 'category', 'buttons'];
+ 
 
   constructor(
     private coursesService: CoursesService,
@@ -33,4 +34,27 @@ export class CoursesComponent implements OnInit {
       data: errorMsg,
     });
   }
+
+  delete(_id: string) {
+    this.coursesService.delete(_id).subscribe(
+      () => {
+        this.courses$ = this.coursesService.list();
+      },
+      (error) => {
+        this.onError('Erro ao deletar curso.');
+      }
+    );
+  }
+
+  create(course: Course) {
+    this.coursesService.create(course).subscribe(
+      (course) => {
+        this.courses$ = this.coursesService.list();
+      },
+      (error) => {
+        this.onError('Erro ao criar curso.');
+      }
+    );
+  }
+  
 }
