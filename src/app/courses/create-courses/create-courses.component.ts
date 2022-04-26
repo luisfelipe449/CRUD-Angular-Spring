@@ -13,7 +13,6 @@ export class CreateCoursesComponent implements OnInit {
     name: '',
     stock: 0,
     unitaryValue: 0,
-    totalAmount: 0,
   };
 
   constructor(private coursesService: CoursesService, private router: Router) {}

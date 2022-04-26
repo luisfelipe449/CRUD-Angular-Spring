@@ -14,7 +14,6 @@ export class UpdateCoursesComponent implements OnInit {
     name: '',
     stock: 0,
     unitaryValue: 0,
-    totalAmount: 0,
   };
 
   constructor(private router: Router, private service: CoursesService, private route: ActivatedRoute) { }
