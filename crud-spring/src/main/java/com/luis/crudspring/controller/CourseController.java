@@ -54,7 +54,6 @@ public class CourseController {
                 .map(rec -> {
                     rec.setName(course.getName());
                     rec.setStock(course.getStock());
-                    rec.setTotalAmount(course.getTotalAmount());
                     rec.setUnitaryValue(course.getUnitaryValue());
                     Course updated = courseRepository.save(rec);
                     return ResponseEntity.ok().body(updated);

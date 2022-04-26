@@ -29,8 +29,4 @@ public class Course{
 
     @Column(length = 999, nullable = true)
     private Number unitaryValue;
-
-    @Column(nullable = true)
-    private Number totalAmount;
-
 }
