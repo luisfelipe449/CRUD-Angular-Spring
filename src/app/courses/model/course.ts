@@ -3,6 +3,4 @@ export interface Course {
     name: string;
     stock: number;
     unitaryValue: number;
-    totalAmount: number;
-
 }
