@@ -1,0 +1,39 @@
+<form class="container-fluid">
+  <h1>Atualizando to-do</h1>
+  <div class="forms">
+    <mat-form-field class="form" appearance="fill">
+      <mat-label>Produto</mat-label>
+      <input
+        [(ngModel)]="courses.name"
+        name="todo.titulo"
+        matInput
+        placeholder="Ex. estudar spring"
+      />
+    </mat-form-field>
+    <mat-form-field class="form" appearance="fill">
+      <mat-label>Estoque</mat-label>
+      <input
+        [(ngModel)]="courses.stock"
+        name="todo.descricao"
+        matInput
+        placeholder="Ex. estudar springboot 2"
+      />
+    </mat-form-field>
+    <mat-form-field class="form" appearance="fill">
+      <mat-label>Valor unitário</mat-label>
+      <input
+        [(ngModel)]="courses.unitaryValue"
+        name="todo.descricao"
+        matInput
+        placeholder="Ex. estudar springboot 2"
+      />
+    </mat-form-field>
+  </div>
+
+  <div class="buttons">
+    <button (click)="update()" mat-stroked-button color="primary">
+      Atualizar
+    </button>
+    <button (click)="cancel()" mat-stroked-button color="warn">Cancelar</button>
+  </div>
+</form>

@@ -45,7 +45,5 @@ export class CoursesComponent implements OnInit {
     );
   }
 
-  public transform(total: any) {
-    return total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-  }
+  
 }

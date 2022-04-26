@@ -38,7 +38,11 @@
           <button (click)="delete(element._id)" mat-mini-fab color="warn">
             <mat-icon>delete</mat-icon>
           </button>
-          <button mat-mini-fab color="accent">
+          <button
+            routerLink="update/{{ element._id }}"
+            mat-mini-fab
+            color="primary"
+          >
             <mat-icon>edit</mat-icon>
           </button>
         </td>

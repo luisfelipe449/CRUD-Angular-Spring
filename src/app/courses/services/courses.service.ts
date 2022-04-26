@@ -26,4 +26,8 @@ export class CoursesService {
     return this.httpClient.post<Course>(this.API, course);
   }
 
+  update(course: Course): Observable<Course>{
+    return this.httpClient.put<Course>(`${this.API}/${course._id}`, course);
+  }
+
 }
