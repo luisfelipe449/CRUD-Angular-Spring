@@ -14,21 +14,21 @@
       <ng-container matColumnDef="category">
         <th mat-header-cell *matHeaderCellDef>Valor Unitário</th>
         <td mat-cell *matCellDef="let element">
-          {{ element.category }}
+          {{ element.unitaryValue | number }}
         </td>
       </ng-container>
 
       <ng-container matColumnDef="total">
         <th mat-header-cell *matHeaderCellDef>Valor Total</th>
         <td mat-cell *matCellDef="let element">
-          {{ (element.name)*(element.category) }}
+          {{ element.unitaryValue * element.stock | number }}
         </td>
       </ng-container>
 
       <ng-container matColumnDef="estoque">
         <th mat-header-cell *matHeaderCellDef>Estoque</th>
         <td mat-cell *matCellDef="let element">
-          {{ element.total }}
+          {{ element.stock }}
         </td>
       </ng-container>
 

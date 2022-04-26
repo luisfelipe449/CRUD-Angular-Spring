@@ -11,9 +11,7 @@ import { CoursesService } from '../services/courses.service';
   styleUrls: ['./courses.component.scss'],
 })
 export class CoursesComponent implements OnInit {
-  ngOnInit(): void {
-    /* TODO document why this method 'ngOnInit' is empty */
-  }
+  ngOnInit(): void {}
 
   courses$: Observable<Course[]>;
   displayedColumns = ['name', 'estoque', 'category', 'total', 'buttons'];
@@ -45,5 +43,9 @@ export class CoursesComponent implements OnInit {
         this.onError('Erro ao deletar curso.');
       }
     );
+  }
+
+  public transform(total: any) {
+    return total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
   }
 }

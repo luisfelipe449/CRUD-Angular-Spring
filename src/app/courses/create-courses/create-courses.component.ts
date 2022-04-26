@@ -11,7 +11,9 @@ import { CoursesService } from '../services/courses.service';
 export class CreateCoursesComponent implements OnInit {
   courses: Course = {
     name: '',
-    category: '',
+    stock: 0,
+    unitaryValue: 0,
+    totalAmount: 0,
   };
 
   constructor(private coursesService: CoursesService, private router: Router) {}

@@ -1,6 +1,6 @@
 <form class="container-fluid">
   <mat-toolbar class="title">
-      <h1>Adicionar novo produto</h1>
+    <h1>Adicionar novo produto</h1>
   </mat-toolbar>
 
   <div class="forms">
@@ -14,10 +14,19 @@
       />
     </mat-form-field>
     <mat-form-field class="form" appearance="fill">
+      <mat-label>Estoque</mat-label>
+      <input
+        [(ngModel)]="courses.stock"
+        name="courses.stock"
+        matInput
+        placeholder=""
+      />
+    </mat-form-field>
+    <mat-form-field class="form" appearance="fill">
       <mat-label>Valor unitário</mat-label>
       <input
-        [(ngModel)]="courses.category"
-        name="courses.category"
+        [(ngModel)]="courses.unitaryValue"
+        name="courses.unitaryValue"
         matInput
         placeholder=""
       />

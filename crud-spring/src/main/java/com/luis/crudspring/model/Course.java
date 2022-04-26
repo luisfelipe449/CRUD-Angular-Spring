@@ -24,7 +24,13 @@ public class Course{
     @Column(length = 200, nullable = false)
     private String name;
 
-    @Column(length = 10, nullable = false)
-    private String category;
+    @Column(length = 100, nullable = true)
+    private Number stock;
+
+    @Column(length = 999, nullable = true)
+    private Number unitaryValue;
+
+    @Column(nullable = true)
+    private Number totalAmount;
 
 }
