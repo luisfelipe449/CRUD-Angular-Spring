@@ -11,8 +11,10 @@ import { CoursesService } from '../services/courses.service';
   styleUrls: ['./courses.component.scss'],
 })
 export class CoursesComponent implements OnInit {
-  ngOnInit(): void {}
-
+  ngOnInit(): void {
+    this.courses$ = this.coursesService.list();
+  }
+  
   courses$: Observable<Course[]>;
   displayedColumns = ['name', 'estoque', 'category', 'total', 'buttons'];
 
