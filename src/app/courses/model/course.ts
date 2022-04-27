@@ -1,6 +1,6 @@
 export interface Course {
-    _id?: string;
-    name: string;
-    stock: number;
-    unitaryValue: number;
+    id?: string;
+    nome: string;
+    estoque: number;
+    valor: number;
 }

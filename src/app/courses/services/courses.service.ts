@@ -7,7 +7,7 @@ import { Course } from '../model/course';
   providedIn: 'root',
 })
 export class CoursesService {
-  private readonly API = '/api/courses';
+  private readonly API = '/api/produto';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -18,8 +18,8 @@ export class CoursesService {
     );
   }
 
-  delete(_id: string) {
-    return this.httpClient.delete(`${this.API}/${_id}`);
+  delete(id: string) {
+    return this.httpClient.delete(`${this.API}/${id}`);
   }
 
   create(course: Course): Observable<Course>{
@@ -27,7 +27,7 @@ export class CoursesService {
   }
 
   update(course: Course): Observable<Course>{
-    return this.httpClient.put<Course>(`${this.API}/${course._id}`, course);
+    return this.httpClient.put<Course>(`${this.API}/${course.id}`, course);
   }
 
 }

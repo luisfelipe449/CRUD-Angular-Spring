@@ -11,15 +11,15 @@ import { CoursesService } from '../services/courses.service';
 export class UpdateCoursesComponent implements OnInit {
 
   courses: Course = {
-    name: '',
-    stock: 0,
-    unitaryValue: 0,
+    nome: '',
+    estoque: 0,
+    valor: 0,
   };
 
   constructor(private router: Router, private service: CoursesService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.courses._id = this.route.snapshot.paramMap.get("id")!;
+    this.courses.id = this.route.snapshot.paramMap.get("id")!;
   }
 
   update(): void{

@@ -10,9 +10,9 @@ import { CoursesService } from '../services/courses.service';
 })
 export class CreateCoursesComponent implements OnInit {
   courses: Course = {
-    name: '',
-    stock: 0,
-    unitaryValue: 0,
+    nome: '',
+    estoque: 0,
+    valor: 0,
   };
 
   constructor(private coursesService: CoursesService, private router: Router) {}
