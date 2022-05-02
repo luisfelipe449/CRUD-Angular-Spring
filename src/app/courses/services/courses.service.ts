@@ -7,7 +7,7 @@ import { Course } from '../model/course';
   providedIn: 'root',
 })
 export class CoursesService {
-  private readonly API = 'https://api-crud-alice.herokuapp.com/api/produto';
+  private readonly API = '/api/produto';
 
   constructor(private httpClient: HttpClient) {}
 
